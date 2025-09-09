@@ -106,12 +106,33 @@
     @media (max-width: 980px){ .how{grid-template-columns:1fr} }
     .step .num{width:28px; height:28px; border-radius:999px; display:inline-grid; place-items:center; background:color-mix(in oklab, var(--brand), black 10%); color:white; font-weight:800; margin-right:8px}
 
-    .gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:14px}
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      justify-items:center;
+    }
     @media (max-width: 980px){ .gallery{grid-template-columns:1fr 1fr} }
     @media (max-width: 600px){ .gallery{grid-template-columns:1fr} }
-    .shot{aspect-ratio:9/16; border-radius:16px; border:1px solid var(--border); background:
-      linear-gradient(135deg, rgba(96,165,250,.15), rgba(52,211,153,.15));
-      display:grid; place-items:center; color:var(--muted); font-weight:700}
+
+    /* Screenshot sizing */
+    .shot{
+      width:100%;
+      max-width:380px;
+      aspect-ratio:9 / 19.5;
+      display:block;
+      margin-inline:auto;
+      border-radius:16px;
+      border:1px solid var(--border);
+      object-fit:cover;
+      box-shadow:0 10px 28px rgba(0,0,0,.12);
+      background:none;
+    }
+    .hero .card{display:grid; place-items:center}
+
+    @media (max-width: 1200px){ .shot{max-width:360px} }
+    @media (max-width: 980px){ .shot{max-width:340px} }
+    @media (max-width: 600px){ .shot{max-width:320px} }
 
     .strip{margin-top:32px; padding:16px; border:1px dashed var(--border); border-radius:14px; text-align:center}
     .kicker{font-size:.78rem; text-transform:uppercase; letter-spacing:.12rem; color:var(--muted)}
@@ -172,10 +193,10 @@
           <span class="kicker">No ads • No accounts • Multiplayer ready</span>
         </div>
       </div>
-    <div class="card">
-      <!-- burası: App Preview (telefon mockup içine koyacağın görsel) -->
-      <img src="images/app-preview.png" alt="SpyWords gameplay preview" class="shot" />
-    </div>
+      <div class="card">
+        <!-- burası: App Preview (telefon mockup içine koyacağın görsel) -->
+        <img src="images/app-preview.png" alt="SpyWords gameplay preview" class="shot" />
+      </div>
     </section>
 
     <!-- Features -->
@@ -228,17 +249,16 @@
     <!-- Screenshots -->
     <section id="screens" style="margin-top:26px" aria-labelledby="screens-title">
       <h2 id="screens-title">Screenshots</h2>
-<div class="gallery">
-  <!-- burası: App Preview (1. screenshot) -->
-  <img src="images/screen1.png" alt="Game lobby screen" class="shot" />
+      <div class="gallery">
+        <!-- burası: App Preview (1. screenshot) -->
+        <img src="images/screen1.png" alt="Game lobby screen" class="shot" />
 
-  <!-- burası: App Preview (2. screenshot) -->
-  <img src="images/screen2.png" alt="Custom word setup" class="shot" />
+        <!-- burası: App Preview (2. screenshot) -->
+        <img src="images/screen2.png" alt="Custom word setup" class="shot" />
 
-  <!-- burası: App Preview (3. screenshot) -->
-  <img src="images/screen3.png" alt="Spy vote screen" class="shot" />
-</div>
-
+        <!-- burası: App Preview (3. screenshot) -->
+        <img src="images/screen3.png" alt="Spy vote screen" class="shot" />
+      </div>
     </section>
 
     <!-- Social proof / CTA -->
